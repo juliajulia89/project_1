@@ -5,25 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Atlantis</title>
-    <link rel="stylesheet" href="styles\style.css">
+     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <script defer src="js/index.js"></script>
+    <script defer src="js/maze.js"></script>
+    <script defer src="js/player.js"></script>
+    <script defer src="js/timer.js"></script>
+    <script defer src="js/badObstacles.js"></script>
+    <script defer src="js/goodObstacles.js"></script>
 </head>
 <body>
-
 <div id="start-page">
     <h1>FIND ATLANTIS</h1>
-    
     <div class="page-text">
         <p> The success of the mission depends on you! 
-            Dr. Henry Walton aka Indiana Jones left you some tips on how to find long lost Atlantis.
+            Dr. Henry Walton aka Indiana Jones left you some tips on how to find the long lost Atlantis.
             You have 30 seconds to get to the end of the maze. 
             Avoid the obstacles and collect golden coins on the way to get extra time. 
             </p>   
-        <div>
-            <audio id="myAudio" src="./indiana_jones.mp3" preload="auto"></audio>
-  
-        <button class="btn btn-lg btn-success button-display" id="welcome-page-button">Start</button>
-    </div>
-    </div>
+        </div>
+
+    <audio id="myAudio" src="./indiana_jones.mp3" preload="auto"></audio>
+    <button class="start-button">Let's go!</button>
 </div>
 
 <div class=" game-container hide" id="game-board" >
@@ -34,23 +36,26 @@
 <div id="lose-page" class = "hide2">
     <img src="./Images/nemoachtergrond2.png" alt="">
     <div class="page-text2">
-    <h1>HELLO, THE NAME IS BRUCE..</h1>
+    <h1>You are no Indian Jones</h1>
         <p> 
         </br>
-        </br>
-              Still thirsty? Just play again!   
+            Be faster and smarter next time. 
         </p>
-        <button id="lose-page-button">Play again</button>
+        <button id="try-again-button">Try again!</button>
     </div>
 </div>
 
-    <script src="Js\background.js"></script>
-    <script src="Js\obstacle_beer.js"></script>
-    <script src="Js\obstacle_trash.js"></script>
-    <script src="Js\obstacle_shark.js"></script>
-    <script src="Js\player.js"></script>
-    <script src="Js\mouse_activity.js"></script>
-    <script src="Js\script.js"></script>
+<div id="win-page" class = "hide3">
+    <img src="./Images/nemoachtergrond2.png" alt="">
+    <div class="page-text3">
+    <h1>You are the next Indian Jones!</h1>
+        <p> 
+        </br>
+           YOu have prooven yourself and discovered Atlantis!
+        </p>
+    </div>
+</div>
+
 </body>
 </html>
 
