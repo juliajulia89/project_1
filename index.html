@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Atlantis</title>
+    <link rel="stylesheet" href="styles\style.css">
+</head>
+<body>
+
+<div id="start-page">
+    <h1>FIND ATLANTIS</h1>
+    
+    <div class="page-text">
+        <p> The success of the mission depends on you! 
+            Dr. Henry Walton aka Indiana Jones left you some tips on how to find long lost Atlantis.
+            You have 30 seconds 
+       
+            </p>   
+        <div>
+            <audio id="myAudio" src="./Sound/cali-1171.mp3" preload="auto"></audio>
+            <a onClick="togglePlay()">Audio On / Off</a>
+        <button class="btn btn-lg btn-success button-display" id="welcome-page-button">Start</button>
+    </div>
+    </div>
+</div>
+
+<div class=" game-container hide" id="game-board" >
+    <canvas class="container" id="canvas" width="1900" height="900">
+    </canvas>
+</div>
+
+<div id="lose-page" class = "hide2">
+    <img src="./Images/nemoachtergrond2.png" alt="">
+    <div class="page-text2">
+    <h1>HELLO, THE NAME IS BRUCE..</h1>
+        <p> 
+        </br>
+        </br>
+              Still thirsty? Just play again!   
+        </p>
+        <button id="lose-page-button">Play again</button>
+    </div>
+</div>
+
+    <script src="Js\background.js"></script>
+    <script src="Js\obstacle_beer.js"></script>
+    <script src="Js\obstacle_trash.js"></script>
+    <script src="Js\obstacle_shark.js"></script>
+    <script src="Js\player.js"></script>
+    <script src="Js\mouse_activity.js"></script>
+    <script src="Js\script.js"></script>
+</body>
+</html>
+
