@@ -27,7 +27,7 @@ const buildGameScreen = () => {
   buildDom(`
   <section class = "game screen">
   <div id="game-board">
-  <canvas id="canvas" width="800" height="500"></canvas>
+  <canvas id="canvas" width="1000" height="500"></canvas>
   </div>  
   <button class="buttons" id="quit-button"> Quit Game</button>
   </section>

@@ -22,7 +22,11 @@ class Game {
     this.handleKeyDown = (event) => {
       if (event.code === "ArrowUp") {
         this.player.setDirection("up");
-      } else if (event.code === "ArrowDown") {
+      } else if (event.code === "ArrowLeft") {
+        this.player.setDirection("left");
+      } else if (event.code === "ArrowRight") {
+        this.player.setDirection("right");
+      } else {
         this.player.setDirection("down");
       }
     };
@@ -44,7 +48,8 @@ class Game {
       }
 
       // 1. UPDATE THE STATE OF PLAYER AND WE MOVE THE OBSTACLES
-      this.player.update();
+      this.player.updateY();
+      this.player.updateX();
       this.obstacles.forEach((obstacle) => {
         obstacle.move();
       });
