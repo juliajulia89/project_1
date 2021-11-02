@@ -19,7 +19,10 @@ body button {
 }
 
 #canvas {
-  border: 2px solid black;
+  border: 1px solid black;
+  background-image: url("../images/canvas_background_3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .show {

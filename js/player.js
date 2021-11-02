@@ -39,9 +39,9 @@ class Player {
       this.directionY = -1;
     } else if (this.x + this.size - this.size <= 0) {
       this.directionX = 1;
-    } else if (this.x + this.size >= 1000) {
-      this.directionX = -1;
-    }
+    } //else if (this.x + this.size >= 1000) {
+    //this.directionX = -1;
+    //}
   }
 
   draw() {

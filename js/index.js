@@ -15,9 +15,10 @@ const buildSplashScreen = () => {
             You have 30 seconds to get to the end of the maze. 
             Avoid the obstacles and collect golden coins on the way to get extra time. 
         </p>
-  <button class= "buttons" id ="start-button"> Let's go! </button>
+  <button class= "buttons" id ="start-button" > Let's go! </button>
   </section>
   `);
+
   const startButton = document.getElementById("start-button");
   startButton.addEventListener("click", buildGameScreen);
 };
@@ -28,13 +29,13 @@ const buildGameScreen = () => {
   <section class = "game screen">
   <div id="game-board">
   <h1 class="timer">20<h1>
-  <canvas id="canvas" width="1000" height="500"></canvas>
+  <canvas id="canvas" width="1000" height="500" ></canvas>
   
   </div>  
   <button class="buttons" id="quit-button"> Quit Game</button>
   </section>
   `);
-
+  new Audio("./sound/indiana_jones.mp3").play();
   const quitButton = document.getElementById("quit-button");
   quitButton.addEventListener("click", buildGameOver);
 
@@ -51,17 +52,17 @@ const buildGameOver = () => {
         </br>
             Be faster and smarter next time. 
         </p>
-  <button class = "buttons" id = "game"> TRY AGAIN</button>
+  <button class = "buttons" id = "loose-button"> TRY AGAIN</button>
   <div class= "pointer"> </div>
   </section>
   `);
 
-  const restartButton = document.querySelector("button");
-  restartButton.addEventListener("click", buildGameScreen);
+  const looseButton = document.getElementById("loose-button");
+  looseButton.addEventListener("click", buildGameScreen);
 };
 
 // Forth Screen => Game Won
-/*const buildGameWon = () => {
+const buildGameWon = () => {
   buildDom(`
   <section class="game-won">
  <h1>You are the next Indian Jones</h1>
@@ -69,14 +70,14 @@ const buildGameOver = () => {
         </br>
             congrats 
         </p>
-  <button class = "buttons" id = "game">improve</button>
+  <button class = "buttons" id = "improve-button">improve</button>
   <div class= "pointer"> </div>
   </section>
   `);
 
-  const restartButton = document.querySelector("button");
-  restartButton.addEventListener("click", buildGameScreen);
-}*/
+  const improveButton = document.getElementById("improve-button");
+  improveButton.addEventListener("click", buildGameScreen);
+};
 
 // When the window loads, then we will run the "buildSplashScreen" function
 // "load" waits for the html and JS

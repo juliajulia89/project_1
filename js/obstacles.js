@@ -15,7 +15,7 @@ class ObstacleX {
   }
 
   move() {
-    this.x += this.speed * -2;
+    this.x += this.speed * -4;
   }
 }
 

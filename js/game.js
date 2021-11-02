@@ -1,4 +1,7 @@
 "use strict";
+//const body_background_image = new Image();
+//body_background_image.src = "/img/body_background.png";
+
 class Game {
   constructor() {
     this.canvas = null;
@@ -9,16 +12,23 @@ class Game {
     this.gameIsOver = false;
     this.gameIsWon = false;
     this.score = 0;
+    this.upscore = true;
   }
 
   timer() {
     const timer = document.querySelector(".timer");
     let countdown = 20;
-    setInterval(() => {
+    const internalId = setInterval(() => {
       countdown -= 1;
       console.log(countdown);
       timer.innerText = countdown;
+      if (countdown === 0) {
+        clearInterval(internalId);
+        buildGameOver();
+      } else if (this.gameIsOver === true) clearInterval(internalId);
+      else if (this.gameIsWon === true) clearInterval(internalId);
     }, 1 * 1000);
+
     console.log(timer);
   }
 
@@ -55,13 +65,13 @@ class Game {
   startLoop() {
     const loop = () => {
       // We create the obstacles with random X
-      if (Math.random() > 0.99) {
+      if (Math.random() > 0.98) {
         const y = Math.random() * this.canvas.height;
         const x = this.canvas.width - 20;
         this.badObstacles.push(new ObstacleX(this.ctx, x, y, 1));
       }
       // We create the obstacles with random Y
-      if (Math.random() > 0.99) {
+      if (Math.random() > 0.98) {
         const x = Math.random() * this.canvas.width;
         const y = this.canvas.height - 20;
         this.goodObstacles.push(new ObstacleY(this.ctx, x, y, 1));
@@ -79,6 +89,7 @@ class Game {
 
       this.checkBadCollisions();
       this.checkGoodCollisions();
+      this.checkWin();
 
       // 2. CLEAR THE CANVAS
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -102,12 +113,10 @@ class Game {
       } else {
         buildGameOver();
       }
-
-       if (!this.gameIsWon) {
-         window.requestAnimationFrame(loop);
-       } else {
-         buildGameOver();
-       }
+      // 5. TERMINATE LOOP IF GAME IS WON
+      if (this.gameIsWon) {
+        return buildGameWon();
+      }
     };
 
     // As loop function will be continuously invoked by
@@ -120,7 +129,10 @@ class Game {
     this.goodObstacles.forEach((obstacle) => {
       if (this.player.goodCollide(obstacle)) {
         console.log("great");
-        this.gameIsOver = false;
+        if (obstacle.upscore) this.score += 20;
+        console.log("line132", this.score);
+
+        //this.gameIsOver = false;
       }
     });
   }
@@ -131,5 +143,10 @@ class Game {
         this.gameIsOver = true;
       }
     });
+  }
+  checkWin() {
+    if (this.player.x >= this.canvas.width) {
+      this.gameIsWon = true;
+    }
   }
 }
