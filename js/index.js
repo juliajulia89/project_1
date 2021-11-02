@@ -27,7 +27,9 @@ const buildGameScreen = () => {
   buildDom(`
   <section class = "game screen">
   <div id="game-board">
+  <h1 class="timer">20<h1>
   <canvas id="canvas" width="1000" height="500"></canvas>
+  
   </div>  
   <button class="buttons" id="quit-button"> Quit Game</button>
   </section>
@@ -57,6 +59,24 @@ const buildGameOver = () => {
   const restartButton = document.querySelector("button");
   restartButton.addEventListener("click", buildGameScreen);
 };
+
+// Forth Screen => Game Won
+/*const buildGameWon = () => {
+  buildDom(`
+  <section class="game-won">
+ <h1>You are the next Indian Jones</h1>
+        <p> 
+        </br>
+            congrats 
+        </p>
+  <button class = "buttons" id = "game">improve</button>
+  <div class= "pointer"> </div>
+  </section>
+  `);
+
+  const restartButton = document.querySelector("button");
+  restartButton.addEventListener("click", buildGameScreen);
+}*/
 
 // When the window loads, then we will run the "buildSplashScreen" function
 // "load" waits for the html and JS

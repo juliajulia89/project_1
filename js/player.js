@@ -6,12 +6,12 @@ class Player {
     this.ctx = this.canvas.getContext("2d");
     this.canvasHeight = 500;
     this.lives = lives;
-    this.size = 50;
+    this.size = 45;
     this.x = 5;
     this.y = canvas.height / 2;
     this.directionX = 0;
     this.directionY = 0;
-    this.speed = 1;
+    this.speed = 3;
   }
 
   updateY() {
@@ -37,8 +37,7 @@ class Player {
       this.directionY = 1;
     } else if (this.y + this.size >= 500) {
       this.directionY = -1;
-    }
-    else if (this.x + this.size - this.size <= 0) {
+    } else if (this.x + this.size - this.size <= 0) {
       this.directionX = 1;
     } else if (this.x + this.size >= 1000) {
       this.directionX = -1;
@@ -51,7 +50,21 @@ class Player {
     this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
 
-  didCollide(obstacle) {
+  goodCollide(obstacle) {
+    if (
+      this.x + this.size >= obstacle.x &&
+      this.y + this.size > obstacle.y &&
+      this.y < obstacle.y + obstacle.size &&
+      this.x <= obstacle.x + obstacle.size &&
+      this.y + this.size > obstacle.y &&
+      this.y < obstacle.y + obstacle.size
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  badCollide(obstacle) {
     if (
       this.x + this.size >= obstacle.x &&
       this.y + this.size > obstacle.y &&
