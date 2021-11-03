@@ -7,9 +7,6 @@ body h1 {
   font-size: 40px;
   text-transform: uppercase;
 }
-.game-screen {
-  
-}
 
 body p {
   font-family: "Roboto Mono", monospace;
@@ -23,7 +20,7 @@ body p {
   font-family: "Roboto Mono", monospace;
   font-size: 30px;
   border-radius: 20px;
-  border: 1px solid white;
+  border: 1px solid #1b3764;
   background-color: black;
   color: #fff;
   display: block;
@@ -42,12 +39,10 @@ body p {
 }
 
 #canvas {
-  border: 1px solid black;
   background-image: url("../images/backgrounds/backgroun3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .show {
   display: block;
 }

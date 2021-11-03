@@ -8,7 +8,7 @@ const buildDom = (html) => {
 // First Screen => Splash Screen
 const buildSplashScreen = () => {
   buildDom(`
-  <section class = "splash screen">
+  <section class = "splash-screen">
   <h1>FIND ATLANTIS</h1>
         <p> 
             The success of the mission depends on you, don't f*** it up! <br>
@@ -27,10 +27,11 @@ const buildSplashScreen = () => {
 // Second Screen => Game Screen
 const buildGameScreen = () => {
   buildDom(`
-  <section class = "game screen">
+  <section class = "game-screen">
   <div id="game-board">
   <h2 class="timer">Time left: 20<h2>
-  <canvas id="canvas" width="1200" height="600" ></canvas>
+  <h2 class="score">Score: 0<h2>
+  <canvas id="canvas" width="1200" height="550" ></canvas>
   </div>  
   </section>
   `);

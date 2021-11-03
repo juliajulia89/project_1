@@ -23,6 +23,10 @@ class Game {
       else if (this.gameWin === true) clearInterval(internalId);
     }, 1 * 1000);
   }
+  scoreup() {
+    const score = document.querySelector(".score");
+    score.innerText = `Score: ${this.score}`;
+  }
 
   start() {
     this.timer();
@@ -80,6 +84,7 @@ class Game {
 
       // 2. CLEAR THE CANVAS
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.scoreup();
 
       // 3. UPDATE THE CANVAS
       // Draw the player
@@ -119,7 +124,7 @@ class Game {
   checkBadCollisions() {
     this.badObstacles.forEach((obstacle) => {
       if (this.player.collide(obstacle)) {
-        console.log("boom");
+        console.log("game over");
         this.gameOver = true;
       }
     });

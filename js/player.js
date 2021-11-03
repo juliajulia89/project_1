@@ -4,7 +4,7 @@ class Player {
     this.ctx = this.canvas.getContext("2d");
     this.canvasHeight = 500;
     this.lives = lives;
-    this.size = 45;
+    this.size = 50;
     this.x = 5;
     this.y = canvas.height / 2;
     this.directionX = 0;
@@ -41,7 +41,7 @@ class Player {
 
   draw() {
     const playerImg = new Image();
-    playerImg.src = "./images/player/player1.png";
+    playerImg.src = "./images/player/player3.png";
     this.ctx.drawImage(playerImg, this.x, this.y, this.size, this.size);
   }
 

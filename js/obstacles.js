@@ -8,9 +8,9 @@ class ObstacleX {
   }
 
   draw() {
-    const playerImg = new Image();
-    playerImg.src = "./images/badObstacles/bad.png";
-    this.ctx.drawImage(playerImg, this.x, this.y, this.size, this.size);
+    const badObsImg = new Image();
+    badObsImg.src = "./images/badObstacles/bad.png";
+    this.ctx.drawImage(badObsImg, this.x, this.y, this.size, this.size);
   }
 
   move() {
@@ -29,9 +29,9 @@ class ObstacleY {
   }
 
   draw() {
-    const playerImg = new Image();
-    playerImg.src = "./images/goodObstacles/coin.png";
-    this.ctx.drawImage(playerImg, this.x, this.y, this.size, this.size);
+    const goodObsImg = new Image();
+    goodObsImg.src = "./images/goodObstacles/coin.png";
+    this.ctx.drawImage(goodObsImg, this.x, this.y, this.size, this.size);
   }
 
   move() {
