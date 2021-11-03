@@ -1,5 +1,3 @@
-"use strict";
-
 class Player {
   constructor(canvas, lives) {
     this.canvas = canvas;
@@ -11,7 +9,7 @@ class Player {
     this.y = canvas.height / 2;
     this.directionX = 0;
     this.directionY = 0;
-    this.speed = 3;
+    this.speed = 2.5;
   }
 
   updateY() {
@@ -24,7 +22,6 @@ class Player {
   }
 
   setDirection(direction) {
-    // +1 down  -1 up
     if (direction === "up") this.directionY = -1;
     else if (direction === "right") this.directionX = 1;
     else if (direction === "left") this.directionX = -1;
@@ -39,18 +36,13 @@ class Player {
       this.directionY = -1;
     } else if (this.x + this.size - this.size <= 0) {
       this.directionX = 1;
-    } //else if (this.x + this.size >= 1000) {
-    //this.directionX = -1;
-    //}
+    }
   }
 
   draw() {
     const playerImg = new Image();
-    playerImg.src = "./images/player.png";
+    playerImg.src = "./images/player/player1.png";
     this.ctx.drawImage(playerImg, this.x, this.y, this.size, this.size);
-    //this.ctx.fillStyle = "#66D3FA";
-    // fillRect(x, y, width, height)
-    //this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
 
   collide(obstacle) {

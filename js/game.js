@@ -1,7 +1,3 @@
-"use strict";
-//const body_background_image = new Image();
-//body_background_image.src = "/img/body_background.png";
-
 class Game {
   constructor() {
     this.canvas = null;
@@ -9,8 +5,8 @@ class Game {
     this.goodObstacles = [];
     this.badObstacles = [];
     this.player = null;
-    this.gameIsOver = false;
-    this.gameIsWon = false;
+    this.gameOver = false;
+    this.gameWin = false;
     this.score = 0;
   }
 
@@ -19,27 +15,20 @@ class Game {
     let countdown = 20;
     const internalId = setInterval(() => {
       countdown -= 1;
-      console.log(countdown);
       timer.innerText = `Time left: ${countdown}`;
       if (countdown === 0) {
         clearInterval(internalId);
         buildGameOver();
-      } else if (this.gameIsOver === true) clearInterval(internalId);
-      else if (this.gameIsWon === true) clearInterval(internalId);
+      } else if (this.gameOver === true) clearInterval(internalId);
+      else if (this.gameWin === true) clearInterval(internalId);
     }, 1 * 1000);
-
-    console.log(timer);
   }
 
   start() {
-    // Append canvas to the DOM, create a Player and start the Canvas loop
-    // Save reference to canvas and Create ctx
     this.timer();
     this.canvas = document.querySelector("canvas");
     this.ctx = canvas.getContext("2d");
-
-    // Create a new player for the current game
-    this.player = new Player(this.canvas, 3);
+    this.player = new Player(this.canvas);
 
     // Add event listener for moving the player
     this.handleKeyDown = (event) => {
@@ -53,7 +42,6 @@ class Game {
         this.player.setDirection("down");
       }
     };
-
     // Any function provided to eventListener
     document.body.addEventListener("keydown", this.handleKeyDown);
 
@@ -64,13 +52,13 @@ class Game {
   startLoop() {
     const loop = () => {
       // We create the obstacles with random X
-      if (Math.random() > 0.98) {
+      if (Math.random() > 0.96) {
         const y = Math.random() * this.canvas.height;
         const x = this.canvas.width - 20;
         this.badObstacles.push(new ObstacleX(this.ctx, x, y, 1));
       }
       // We create the obstacles with random Y
-      if (Math.random() > 0.98) {
+      if (Math.random() > 0.975) {
         const x = Math.random() * this.canvas.width;
         const y = this.canvas.height - 20;
         this.goodObstacles.push(new ObstacleY(this.ctx, x, y, 1));
@@ -106,28 +94,25 @@ class Game {
         obstacle.draw();
       });
 
-      // 4. TERMINATE LOOP IF GAME IS OVER
-      if (this.gameIsWon) {
+      // 4. TERMINATE LOOP IF GAME IS OVER OR WON
+      if (this.gameWin) {
         buildGameWon();
-      } else if (this.gameIsOver) {
+      } else if (this.gameOver) {
         buildGameOver();
       } else {
         window.requestAnimationFrame(loop);
       }
     };
 
-    // As loop function will be continuously invoked by
-    // the `window` object- `window.requestAnimationFrame(loop)`
-    // we need to `start an infinitive loop` till the game is over
     window.requestAnimationFrame(loop);
   }
 
   checkGoodCollisions() {
-    this.goodObstacles.forEach((obstacle) => {
+    this.goodObstacles.forEach((obstacle, index) => {
       if (this.player.collide(obstacle)) {
         if (obstacle.upscore) this.score += 20;
-        obstacle.upscore !== obstacle.upscore;
-        console.log("line132", this.score);
+        this.goodObstacles.splice(index, 1);
+        console.log(this.score);
       }
     });
   }
@@ -135,13 +120,13 @@ class Game {
     this.badObstacles.forEach((obstacle) => {
       if (this.player.collide(obstacle)) {
         console.log("boom");
-        this.gameIsOver = true;
+        this.gameOver = true;
       }
     });
   }
   checkWin() {
     if (this.player.x >= this.canvas.width) {
-      this.gameIsWon = true;
+      this.gameWin = true;
     }
   }
 }

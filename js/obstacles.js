@@ -3,15 +3,14 @@ class ObstacleX {
     this.ctx = ctx;
     this.x = x;
     this.y = y;
-    this.color = "red";
     this.speed = speed;
-    this.size = 15;
+    this.size = 30;
   }
 
   draw() {
-    // We will first draw squares
-    this.ctx.fillStyle = this.color;
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    const playerImg = new Image();
+    playerImg.src = "./images/badObstacles/bad.png";
+    this.ctx.drawImage(playerImg, this.x, this.y, this.size, this.size);
   }
 
   move() {
@@ -24,16 +23,15 @@ class ObstacleY {
     this.ctx = ctx;
     this.x = x;
     this.y = y;
-    this.color = "green";
     this.speed = speed;
-    this.size = 10;
+    this.size = 20;
     this.upscore = true;
   }
 
   draw() {
-    // We will first draw squares
-    this.ctx.fillStyle = this.color;
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    const playerImg = new Image();
+    playerImg.src = "./images/goodObstacles/coin.png";
+    this.ctx.drawImage(playerImg, this.x, this.y, this.size, this.size);
   }
 
   move() {

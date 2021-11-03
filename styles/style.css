@@ -7,11 +7,16 @@ body h1 {
   font-size: 40px;
   text-transform: uppercase;
 }
+.game-screen {
+  
+}
 
 body p {
   font-family: "Roboto Mono", monospace;
   font-size: 20px;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 28px;
 }
 
 .buttons {
@@ -38,7 +43,7 @@ body p {
 
 #canvas {
   border: 1px solid black;
-  background-image: url("../images/canvas_background_3.jpg");
+  background-image: url("../images/backgrounds/backgroun3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
