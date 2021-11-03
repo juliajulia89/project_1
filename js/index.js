@@ -1,4 +1,6 @@
 // General function that will update the HTML content dinamically
+const audio = new Audio("./sound/indiana_jones.mp3");
+
 const buildDom = (html) => {
   const main = document.querySelector("main");
   main.innerHTML = html;
@@ -12,7 +14,7 @@ const buildSplashScreen = () => {
         <p> 
             The success of the mission depends on you! 
             Dr. Henry Walton aka Indiana Jones left you some tips on how to find the long lost Atlantis.
-            You have 30 seconds to get to the end of the maze. 
+            You have 20 seconds to get past your enemies. 
             Avoid the obstacles and collect golden coins on the way to get extra time. 
         </p>
   <button class= "buttons" id ="start-button" > Let's go! </button>
@@ -28,14 +30,17 @@ const buildGameScreen = () => {
   buildDom(`
   <section class = "game screen">
   <div id="game-board">
-  <h1 class="timer">20<h1>
+  
+  <h2 class="timer">Time left: 20<h2>
+  
   <canvas id="canvas" width="1000" height="500" ></canvas>
   
   </div>  
   <button class="buttons" id="quit-button"> Quit Game</button>
   </section>
   `);
-  new Audio("./sound/indiana_jones.mp3").play();
+  audio.play();
+  //new Audio("./sound/indiana_jones.mp3").play();
   const quitButton = document.getElementById("quit-button");
   quitButton.addEventListener("click", buildGameOver);
 
@@ -56,7 +61,7 @@ const buildGameOver = () => {
   <div class= "pointer"> </div>
   </section>
   `);
-
+  audio.pause();
   const looseButton = document.getElementById("loose-button");
   looseButton.addEventListener("click", buildGameScreen);
 };
@@ -74,7 +79,8 @@ const buildGameWon = () => {
   <div class= "pointer"> </div>
   </section>
   `);
-
+  console.log("won");
+  audio.pause();
   const improveButton = document.getElementById("improve-button");
   improveButton.addEventListener("click", buildGameScreen);
 };

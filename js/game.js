@@ -12,7 +12,6 @@ class Game {
     this.gameIsOver = false;
     this.gameIsWon = false;
     this.score = 0;
-    this.upscore = true;
   }
 
   timer() {
@@ -21,7 +20,7 @@ class Game {
     const internalId = setInterval(() => {
       countdown -= 1;
       console.log(countdown);
-      timer.innerText = countdown;
+      timer.innerText = `Time left: ${countdown}`;
       if (countdown === 0) {
         clearInterval(internalId);
         buildGameOver();
@@ -108,14 +107,12 @@ class Game {
       });
 
       // 4. TERMINATE LOOP IF GAME IS OVER
-      if (!this.gameIsOver) {
-        window.requestAnimationFrame(loop);
-      } else {
-        buildGameOver();
-      }
-      // 5. TERMINATE LOOP IF GAME IS WON
       if (this.gameIsWon) {
-        return buildGameWon();
+        buildGameWon();
+      } else if (this.gameIsOver) {
+        buildGameOver();
+      } else {
+        window.requestAnimationFrame(loop);
       }
     };
 
@@ -127,18 +124,16 @@ class Game {
 
   checkGoodCollisions() {
     this.goodObstacles.forEach((obstacle) => {
-      if (this.player.goodCollide(obstacle)) {
-        console.log("great");
+      if (this.player.collide(obstacle)) {
         if (obstacle.upscore) this.score += 20;
+        obstacle.upscore !== obstacle.upscore;
         console.log("line132", this.score);
-
-        //this.gameIsOver = false;
       }
     });
   }
   checkBadCollisions() {
     this.badObstacles.forEach((obstacle) => {
-      if (this.player.badCollide(obstacle)) {
+      if (this.player.collide(obstacle)) {
         console.log("boom");
         this.gameIsOver = true;
       }

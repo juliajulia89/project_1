@@ -3,19 +3,37 @@ body {
 }
 
 body h1 {
-  font-size: 30px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 40px;
   text-transform: uppercase;
 }
 
-body button {
+body p {
+  font-family: "Roboto Mono", monospace;
   font-size: 20px;
+  text-transform: uppercase;
+}
+
+.buttons {
+  font-family: "Roboto Mono", monospace;
+  font-size: 30px;
+  border-radius: 20px;
+  border: 1px solid white;
   background-color: black;
   color: #fff;
-  padding: 10px 20px;
-  border: 0;
-  box-shadow: 0;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  line-height: 22px;
+  padding: 20px 25px;
+  text-decoration: none;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+}
+
+.buttons:hover {
+  cursor: pointer;
+  background: #1b3764;
 }
 
 #canvas {

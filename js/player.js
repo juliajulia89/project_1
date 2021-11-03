@@ -45,26 +45,15 @@ class Player {
   }
 
   draw() {
-    this.ctx.fillStyle = "#66D3FA";
+    const playerImg = new Image();
+    playerImg.src = "./images/player.png";
+    this.ctx.drawImage(playerImg, this.x, this.y, this.size, this.size);
+    //this.ctx.fillStyle = "#66D3FA";
     // fillRect(x, y, width, height)
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    //this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
 
-  goodCollide(obstacle) {
-    if (
-      this.x + this.size >= obstacle.x &&
-      this.y + this.size > obstacle.y &&
-      this.y < obstacle.y + obstacle.size &&
-      this.x <= obstacle.x + obstacle.size &&
-      this.y + this.size > obstacle.y &&
-      this.y < obstacle.y + obstacle.size
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  badCollide(obstacle) {
+  collide(obstacle) {
     if (
       this.x + this.size >= obstacle.x &&
       this.y + this.size > obstacle.y &&

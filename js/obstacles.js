@@ -27,6 +27,7 @@ class ObstacleY {
     this.color = "green";
     this.speed = speed;
     this.size = 10;
+    this.upscore = true;
   }
 
   draw() {
