@@ -9,7 +9,7 @@ const buildDom = (html) => {
 const buildSplashScreen = () => {
   buildDom(`
   <section class = "splash-screen">
-  <h1>??FIND ATLANTIS</h1>
+  <h1>FIND ATLANTIS</h1>
         <p> 
             The success of the mission depends on you, don't f*** it up! <br>
             Dr. Henry Walton aka Indiana Jones has left you some tips on how to find the long lost city of Atlantis. <br>
@@ -48,14 +48,14 @@ const buildGameScreen = () => {
 // Third Screen => Game Over
 const buildGameOver = () => {
   buildDom(`
-  <section class="game-over">
- <h1>You are no Indian Jones</h1>
+  <section class= "game-over">
+ <h1>You are no Indiana Jones</h1>
         <p> 
         </br>
             Be faster and smarter next time. 
         </p>
   <button class = "buttons" id = "loose-button"> TRY AGAIN</button>
-  <div class= "pointer"> </div>
+ 
   </section>
   `);
 
@@ -68,14 +68,14 @@ const buildGameOver = () => {
 // Forth Screen => Game Won
 const buildGameWon = () => {
   buildDom(`
-  <section class="game-won">
+  <section class= "game-won">
  <h1>You are the next Indian Jones</h1>
         <p> 
         </br>
             congrats 
         </p>
   <button class = "buttons" id = "improve-button">improve</button>
-  <div class= "pointer"> </div>
+  
   </section>
   `);
 
