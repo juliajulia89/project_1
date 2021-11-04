@@ -1,4 +1,4 @@
-const audio = new Audio("/sound/indiana_jones.mp3");
+const audio = new Audio("./sound/indiana_jones.mp3");
 
 const buildDom = (html) => {
   const main = document.querySelector("main");
