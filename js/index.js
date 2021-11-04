@@ -1,5 +1,5 @@
 const audioIndiana = new Audio("./sound/indiana_jones.mp3");
-const audioSplash = new Audio("./sound/splash_screen.mp3");
+const audioSplash = new Audio("./sound/water_effects.mp3");
 
 const buildDom = (html) => {
   const main = document.querySelector("main");
@@ -49,10 +49,10 @@ const buildGameScreen = () => {
 const buildGameOver = () => {
   buildDom(`
   <section class= "game-over">
-  <div class = "the-best-div-ever">
-     <h1>You are no Indiana Jones</h1>
+  <div class = "end-game-text"> 
     <p> 
-        Be faster and smarter next time. 
+    You are no Indiana Jones </br> </br>
+    Be faster and smarter next time
     </p> 
      <button class = "buttons" id = "loose-button"> KEEP TRYING </button>
       </div>
@@ -60,7 +60,7 @@ const buildGameOver = () => {
   `);
 
   audioIndiana.pause();
-  audioSplash.pause;
+  audioSplash.play();
 
   const looseButton = document.getElementById("loose-button");
   looseButton.addEventListener("click", buildGameScreen);
@@ -70,18 +70,18 @@ const buildGameOver = () => {
 const buildGameWon = () => {
   buildDom(`
   <section class= "game-won">
-  <div class = "the-best-div-ever">
- <h1>CONGRATULATIONS</h1>
-        <p> 
-          You are the next Indiana Jones 
-        </p>  
+  <div class = "end-game-text">
+  <p> 
+   CONGRATULATIONS </br>
+    You are the next Indiana Jones 
+   </p>  
   <button class = "buttons" id = "improve-button"> IMPROVE </button>
  </div>
   </section>
   `);
 
   audioIndiana.pause();
-  audioSplash.pause;
+  audioSplash.play();
   const improveButton = document.getElementById("improve-button");
   improveButton.addEventListener("click", buildGameScreen);
 };

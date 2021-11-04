@@ -70,7 +70,7 @@ p {
   text-align: center;
 }
 
-.the-best-div-ever {
+.end-game-text {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -78,14 +78,12 @@ p {
   justify-content: space-evenly;
 }
 
-.the-best-div-ever p {
+.end-game-text p {
   font-size: 30px;
   color: #f2e9d0;
 }
-.the-best-div-ever h1 {
-  color: #f2e9d0;
-}
-.the-best-div-ever button {
+
+.end-game-text button {
   color: #f2e9d0;
 }
 
