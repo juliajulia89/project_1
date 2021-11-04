@@ -1,5 +1,6 @@
 const audioIndiana = new Audio("./sound/indiana_jones.mp3");
 const audioSplash = new Audio("./sound/splash_screen.mp3");
+
 const buildDom = (html) => {
   const main = document.querySelector("main");
   main.innerHTML = html;
@@ -31,7 +32,7 @@ const buildGameScreen = () => {
   <section class = "game-screen">
   <h2 class="timer">Time left: 20<h2>
   <h2 class="score">Score: 0<h2>
-  <canvas id="canvas" width="1200" height="550" ></canvas>
+  <canvas id="canvas" width="1200" height="600" ></canvas>
   </section>
   `);
 
