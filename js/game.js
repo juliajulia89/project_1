@@ -15,7 +15,7 @@ class Game {
     let countdown = 20;
     const internalId = setInterval(() => {
       countdown -= 1;
-      timer.innerText = `Time left: ${countdown}`;
+      timer.innerText = `CHECKTime left: ${countdown}`;
       if (countdown === 0) {
         clearInterval(internalId);
         buildGameOver();
