@@ -29,7 +29,7 @@ const buildGameScreen = () => {
   buildDom(`
   <section class = "game-screen">
   <div id="game-board">
-  <h2 class="timer">CHECKTime left: 20<h2>
+  <h2 class="timer">Time left: 20<h2>
   <h2 class="score">Score: 0<h2>
   <canvas id="canvas" width="1200" height="550" ></canvas>
   </div>  
