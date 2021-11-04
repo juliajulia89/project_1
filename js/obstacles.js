@@ -4,7 +4,7 @@ class ObstacleX {
     this.x = x;
     this.y = y;
     this.speed = speed;
-    this.size = 30;
+    this.size = 35;
   }
 
   draw() {
@@ -24,7 +24,7 @@ class ObstacleY {
     this.x = x;
     this.y = y;
     this.speed = speed;
-    this.size = 20;
+    this.size = 25;
     this.upscore = true;
   }
 

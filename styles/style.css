@@ -14,14 +14,19 @@ h1 {
 h2 {
   font-size: 25px;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+}
+.h2-class {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .timer {
   padding: 0;
   margin: 0;
 }
 p {
-  font-size: 25px;
+  font-size: 27px;
   text-align: center;
   line-height: 35px;
   width: 50%;
@@ -94,4 +99,12 @@ p {
 
 .buttons:hover {
   cursor: pointer;
+}
+
+#improve-button {
+
+}
+
+#loose-button{
+
 }

@@ -30,8 +30,11 @@ const buildSplashScreen = () => {
 const buildGameScreen = () => {
   buildDom(`
   <section class = "game-screen">
-  <h2 class="timer">Time left: 20<h2>
-  <h2 class="score">Score: 0<h2>
+  <div class = "h2-class">
+ 
+  <h2 class="timer">Time left: 20</h2>
+   <h2 class="score">Score: 0</h2>
+  </div>
   <canvas id="canvas" width="1200" height="600" ></canvas>
   </section>
   `);
