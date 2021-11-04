@@ -12,7 +12,10 @@ h1 {
   margin: 0;
   padding: 0;
 }
-
+.timer {
+  padding: 0;
+  margin: 0;
+}
 p {
   font-family: "Roboto Mono", monospace;
   font-size: 20px;
@@ -71,9 +74,9 @@ p {
   font-family: "Roboto Mono", monospace;
   font-size: 30px;
   border-radius: 20px;
-  border: 1px solid #1b3764;
-  background-color: black;
-  color: #fff;
+  background-color: transparent;
+  border: none;
+  color: black;
   display: block;
   margin: 0 auto;
   margin-bottom: 10px;
@@ -86,7 +89,6 @@ p {
 
 .buttons:hover {
   cursor: pointer;
-  background: #1b3764;
 }
 
 .show {

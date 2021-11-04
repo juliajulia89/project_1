@@ -1,5 +1,5 @@
-const audio = new Audio("./sound/indiana_jones.mp3");
-
+const audioIndiana = new Audio("./sound/indiana_jones.mp3");
+const audioSplash = new Audio("./sound/splash_screen.mp3");
 const buildDom = (html) => {
   const main = document.querySelector("main");
   main.innerHTML = html;
@@ -14,13 +14,13 @@ const buildSplashScreen = () => {
             The success of the mission depends on you, don't f*** it up! <br>
             Dr. Henry Walton aka Indiana Jones has left you his submarine in order to help you find the long lost city of Atlantis. <br>
             Watch out for the mermaids, their beauty can be deceitful. Collect treasures to improve your score. <br>
-            You've got 20 seconds.  
-            
+            You've got 20 seconds. Good luck!
         </p>
   <button class= "buttons" id ="start-button" > Let's go! </button>
   </section>
   `);
 
+  audioSplash.play();
   const startButton = document.getElementById("start-button");
   startButton.addEventListener("click", buildGameScreen);
 };
@@ -29,19 +29,16 @@ const buildSplashScreen = () => {
 const buildGameScreen = () => {
   buildDom(`
   <section class = "game-screen">
-  <div id="game-board">
+
   <h2 class="timer">Time left: 20<h2>
   <h2 class="score">Score: 0<h2>
   <canvas id="canvas" width="1200" height="550" ></canvas>
-  </div>  
+
   </section>
   `);
 
-  audio.play();
-  //<button class="buttons" id="quit-button"> Quit Game</button>
-  //const quitButton = document.getElementById("quit-button");
-  //quitButton.addEventListener("click", buildGameOver);
-
+  audioIndiana.play();
+  audioSplash.pause();
   const game = new Game();
   game.start();
 };
@@ -60,8 +57,8 @@ const buildGameOver = () => {
   </section>
   `);
 
-  audio.pause();
-
+  audioIndiana.pause();
+  audioSplash.pause;
   const looseButton = document.getElementById("loose-button");
   looseButton.addEventListener("click", buildGameScreen);
 };
@@ -80,7 +77,8 @@ const buildGameWon = () => {
   </section>
   `);
 
-  audio.pause();
+  audioIndiana.pause();
+  audioSplash.pause;
   const improveButton = document.getElementById("improve-button");
   improveButton.addEventListener("click", buildGameScreen);
 };
