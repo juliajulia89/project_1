@@ -1,19 +1,64 @@
-body {
+body,
+html {
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
-body h1 {
+h1 {
   font-family: "Roboto Mono", monospace;
   font-size: 40px;
   text-transform: uppercase;
+  margin: 0;
+  padding: 0;
 }
 
-body p {
+p {
   font-family: "Roboto Mono", monospace;
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
   line-height: 28px;
+}
+
+.game-screen {
+  height: 100vh;
+  background: radial-gradient(
+    circle at -3.7% -5%,
+    rgb(113, 213, 225) 0.3%,
+    rgb(73, 146, 226) 90.5%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.splash-screen {
+  height: 100vh;
+  background: radial-gradient(
+    circle at -3.7% -5%,
+    rgb(113, 213, 225) 0.3%,
+    rgb(73, 146, 226) 90.5%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.game-over {
+  background: linear-gradient(
+    359.3deg,
+    rgb(196, 214, 252) 1%,
+    rgba(187, 187, 187, 0) 70.9%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.game-won {
+  background: linear-gradient(
+    359.3deg,
+    rgb(196, 214, 252) 1%,
+    rgba(187, 187, 187, 0) 70.9%
+  );
 }
 
 .buttons {
