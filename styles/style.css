@@ -23,11 +23,7 @@ p {
 
 .game-screen {
   height: 100vh;
-  background: radial-gradient(
-    circle at -3.7% -5%,
-    rgb(113, 213, 225) 0.3%,
-    rgb(73, 146, 226) 90.5%
-  );
+  background-image: url("../images/backgrounds/game/backgroun3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
@@ -37,28 +33,23 @@ p {
 
 .splash-screen {
   height: 100vh;
-  background: radial-gradient(
-    circle at -3.7% -5%,
-    rgb(113, 213, 225) 0.3%,
-    rgb(73, 146, 226) 90.5%
-  );
+  background-image: url("../images/backgrounds/splash/splash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
   margin: 0;
   text-align: center;
 }
-section {
-  height: 100vh;
+
+#canvas {
+  background-image: url("../images/backgrounds/game/backgroun3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .game-over {
   height: 100vh;
-  background: radial-gradient(
-    circle at -3.7% -5%,
-    rgb(113, 213, 225) 0.3%,
-    rgb(73, 146, 226) 90.5%
-  );
+  background-image: url("../images/backgrounds/lost/lostGame.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
@@ -68,11 +59,7 @@ section {
 
 .game-won {
   height: 100vh;
-  background: radial-gradient(
-    circle at -3.7% -5%,
-    rgb(113, 213, 225) 0.3%,
-    rgb(73, 146, 226) 90.5%
-  );
+  background-image: url("../images/backgrounds/won/winGame.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
@@ -102,11 +89,6 @@ section {
   background: #1b3764;
 }
 
-#canvas {
-  background-image: url("../images/backgrounds/backgroun3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .show {
   display: block;
 }

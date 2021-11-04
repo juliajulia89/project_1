@@ -12,9 +12,10 @@ const buildSplashScreen = () => {
   <h1>FIND ATLANTIS</h1>
         <p> 
             The success of the mission depends on you, don't f*** it up! <br>
-            Dr. Henry Walton aka Indiana Jones has left you some tips on how to find the long lost city of Atlantis. <br>
-            Pirates are out to kill you. Collect treasures to improve your score. <br>
+            Dr. Henry Walton aka Indiana Jones has left you his submarine in order to help you find the long lost city of Atlantis. <br>
+            Watch out for the mermaids, their beauty can be deceitful. Collect treasures to improve your score. <br>
             You've got 20 seconds.  
+            
         </p>
   <button class= "buttons" id ="start-button" > Let's go! </button>
   </section>
@@ -69,7 +70,7 @@ const buildGameOver = () => {
 const buildGameWon = () => {
   buildDom(`
   <section class= "game-won">
- <h1>You are the next Indian Jones</h1>
+ <h1>You are the next Indiana Jones</h1>
         <p> 
         </br>
             congrats 

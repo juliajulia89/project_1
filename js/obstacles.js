@@ -9,7 +9,7 @@ class ObstacleX {
 
   draw() {
     const badObsImg = new Image();
-    badObsImg.src = "./images/badObstacles/bad.png";
+    badObsImg.src = "./images/badObstacles/mermaid (1).png";
     this.ctx.drawImage(badObsImg, this.x, this.y, this.size, this.size);
   }
 
@@ -30,7 +30,7 @@ class ObstacleY {
 
   draw() {
     const goodObsImg = new Image();
-    goodObsImg.src = "./images/goodObstacles/coin.png";
+    goodObsImg.src = "./images/goodObstacles/coin_pure.png";
     this.ctx.drawImage(goodObsImg, this.x, this.y, this.size, this.size);
   }
 
