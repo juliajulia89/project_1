@@ -80,13 +80,13 @@ p {
 
 .the-best-div-ever p {
   font-size: 30px;
-  color: rgb(189, 185, 181);
+  color: #f2e9d0;
 }
 .the-best-div-ever h1 {
-  color: rgb(189, 185, 181);
+  color: #f2e9d0;
 }
 .the-best-div-ever button {
-  color: rgb(189, 185, 181);
+  color: #f2e9d0;
 }
 
 .game-won {
