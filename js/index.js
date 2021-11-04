@@ -31,7 +31,6 @@ const buildGameScreen = () => {
   buildDom(`
   <section class = "game-screen">
   <div class = "h2-class">
- 
   <h2 class="timer">Time left: 20</h2>
    <h2 class="score">Score: 0</h2>
   </div>
@@ -50,14 +49,14 @@ const buildGameScreen = () => {
 const buildGameOver = () => {
   buildDom(`
   <section class= "game-over">
- <h1>You are no Indiana Jones</h1>
-        <p> 
-        </br>
-            Be faster and smarter next time. 
-        </p>
-  <button class = "buttons" id = "loose-button"> KEEP TRYING </button>
- 
-  </section>
+  <div class = "the-best-div-ever">
+     <h1>You are no Indiana Jones</h1>
+    <p> 
+        Be faster and smarter next time. 
+    </p> 
+     <button class = "buttons" id = "loose-button"> KEEP TRYING </button>
+      </div>
+   </section>
   `);
 
   audioIndiana.pause();
@@ -71,11 +70,13 @@ const buildGameOver = () => {
 const buildGameWon = () => {
   buildDom(`
   <section class= "game-won">
+  <div class = "the-best-div-ever">
  <h1>CONGRATULATIONS</h1>
         <p> 
           You are the next Indiana Jones 
-        </p>
+        </p>  
   <button class = "buttons" id = "improve-button"> IMPROVE </button>
+ </div>
   </section>
   `);
 

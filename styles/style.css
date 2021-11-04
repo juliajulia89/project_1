@@ -70,6 +70,25 @@ p {
   text-align: center;
 }
 
+.the-best-div-ever {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.the-best-div-ever p {
+  font-size: 30px;
+  color: rgb(189, 185, 181);
+}
+.the-best-div-ever h1 {
+  color: rgb(189, 185, 181);
+}
+.the-best-div-ever button {
+  color: rgb(189, 185, 181);
+}
+
 .game-won {
   height: 100vh;
   background-image: url("../images/backgrounds/won/winGame.jpg");
@@ -99,12 +118,4 @@ p {
 
 .buttons:hover {
   cursor: pointer;
-}
-
-#improve-button {
-
-}
-
-#loose-button{
-
 }
