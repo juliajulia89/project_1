@@ -9,7 +9,7 @@ const buildDom = (html) => {
 const buildSplashScreen = () => {
   buildDom(`
   <section class = "splash-screen">
-  <h1>FIND ATLANTIS</h1>
+  <h1>??FIND ATLANTIS</h1>
         <p> 
             The success of the mission depends on you, don't f*** it up! <br>
             Dr. Henry Walton aka Indiana Jones has left you some tips on how to find the long lost city of Atlantis. <br>
